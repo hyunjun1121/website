@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hyunjun Kim - AI Researcher and Computer Science student at KAIST specializing in AI safety, LLM security, and intelligent systems.">
+    <meta name="keywords" content="AI researcher, machine learning, KAIST, LLM security, AI safety, computer science, research">
+    <meta name="author" content="Hyunjun Kim">
+    <meta property="og:title" content="Hyunjun Kim - AI Researcher & Computer Scientist">
+    <meta property="og:description" content="AI Researcher and Computer Science student at KAIST specializing in AI safety, LLM security, and intelligent systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="input/profile.jpg">
+    <meta property="og:url" content="https://hyunjunkim.dev">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@hyunjun1121">
+    <meta name="theme-color" content="#1a365d">
+    <title>Hyunjun Kim - AI Researcher & Computer Scientist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="input/favicon.png">
+    <link rel="apple-touch-icon" href="input/favicon.png">
+    <link rel="preload" href="input/profile.jpg" as="image">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//scholar.google.com">
+    <link rel="dns-prefetch" href="//linkedin.com">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hyunjun Kim",
+        "jobTitle": "AI Researcher & Computer Science Student",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "KAIST"
+        },
+        "url": "https://hyunjunkim.dev",
+        "sameAs": [
+            "https://www.linkedin.com/in/hyunjun1121",
+            "https://scholar.google.com/citations?user=KjwPYpoAAAAJ&hl=ko"
+        ],
+        "knowsAbout": ["Artificial Intelligence", "Machine Learning", "AI Safety", "LLM Security"],
+        "alumniOf": "KAIST",
+        "email": "hyunjun1121@kaist.ac.kr"
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-brand">Hyunjun Kim</div>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#research" role="menuitem">Research</a></li>
+                <li role="none"><a href="#education" role="menuitem">Education</a></li>
+                <li role="none"><a href="#publications" role="menuitem">Publications</a></li>
+                <li role="none"><a href="#awards" role="menuitem">Awards</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" role="banner">
+        <canvas id="particles-canvas" aria-hidden="true"></canvas>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hyunjun Kim</h1>
+                    <p class="hero-subtitle">AI Researcher & Computer Science Student at KAIST</p>
+                    <p class="hero-description">
+                        Exploring the frontiers of AI safety, LLM security, and intelligent systems with a passion for research that impacts both academia and industry.
+                    </p>
+                    <div class="hero-links">
+                        <a href="https://www.linkedin.com/in/hyunjun1121" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="View LinkedIn Profile">LinkedIn</a>
+                        <a href="https://scholar.google.com/citations?user=KjwPYpoAAAAJ&hl=ko" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="View Google Scholar Profile">Google Scholar</a>
+                        <a href="input/cv.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="Download CV PDF">Download CV</a>
+                        <a href="mailto:hyunjun1121@kaist.ac.kr" class="btn-secondary" aria-label="Send email to Hyunjun Kim">Contact</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="input/profile.jpg" alt="Professional headshot of Hyunjun Kim, AI researcher and computer science student at KAIST" class="profile-image" loading="eager" width="200" height="200">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    I'm an undergraduate Computer Science student at KAIST, passionate about advancing AI safety and developing intelligent systems. My research spans LLM security, red team methodologies, and retrieval-augmented generation systems for specialized domains.
+                </p>
+                <p>
+                    From a tennis player to military academy cadet to AI researcher, my journey has been shaped by the goal of creating technology that positively impacts society. Currently, I'm working on cutting-edge research at multiple institutions while maintaining academic excellence (Dean's List, Top 2%).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Experience -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2>Research Experience</h2>
+            <div class="research-timeline">
+                <div class="research-item">
+                    <div class="research-period">
+                        <span class="date-text">Aug. 2025 – Present</span>
+                        <div class="period-logos">
+                            <img src="input/gatech-logo.png" alt="Georgia Institute of Technology logo" class="period-logo" loading="lazy" width="60" height="60">
+                            <img src="input/nvidia-logo.png" alt="NVIDIA Corporation logo" class="period-logo" loading="lazy" width="60" height="60">
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <h3>Georgia Institute of Technology (with NVIDIA)</h3>
+                        <p class="position">Research Intern, Atlanta, GA</p>
+                        <p class="research-description">Coordinating a cross-institution agentic-LLM benchmark effort with NVIDIA across 10+ benchmarks and 8+ model families.</p>
+                    </div>
+                </div>
+                
+                <div class="research-item">
+                    <div class="research-period">
+                        <span class="date-text">Mar. 2025 – Aug. 2025</span>
+                        <div class="period-logos">
+                            <img src="input/kaist-logo.png" alt="KAIST (Korea Advanced Institute of Science and Technology) logo" class="period-logo" loading="lazy" width="60" height="60">
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <h3><a href="https://www.mlai-kaist.com/" target="_blank" class="research-link">MLAI@KAIST AI Graduate School</a></h3>
+                        <p class="position">Research Intern, Seoul, South Korea</p>
+                        <p class="research-description">Developing retrieval-augmented generation (RAG) for AI-driven drug discovery, integrating multi-document summarization, molecular pathway analysis, multi-LLM collaboration ("Chain of Agents"), and long-context summarization to accelerate research.</p>
+                    </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-period">
+                        <span class="date-text">Oct. 2024 – Feb. 2025</span>
+                        <div class="period-logos">
+                            <img src="input/aim-intelligence-logo.svg" alt="Aim Intelligence company logo" class="period-logo" loading="lazy" width="60" height="60">
+                        </div>
+                        <div class="period-images">
+                            <img src="input/team-photo(one-shot paper).jpeg" alt="Research team photo for One-Shot paper collaboration" class="period-image" loading="lazy" width="180" height="120">
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <h3><a href="https://aim-intelligence.com/" target="_blank" class="research-link">Aim Intelligence</a></h3>
+                        <p class="position">AI Red Team Researcher, LLM Jailbreak Red Team, Seoul, South Korea</p>
+                        <ul class="research-achievements">
+                            <li>Investigated advanced LLM jailbreak techniques (achieved up to 95.9% success rate)</li>
+                            <li>Co-first author of "One-Shot is Enough..." (ACL 2025 main), introducing M2S (Multi-turn-to-Single-turn) adversarial methods</li>
+                            <li>Co-authored "Breaking the Guardrails with Personality..." (ACL 2025 under review), exploring personality-driven jailbreak</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-period">
+                        <span class="date-text">May 2024 – Feb. 2025</span>
+                        <div class="period-logos">
+                            <img src="input/adelaide-logo.png" alt="University of Adelaide CREST Centre logo" class="period-logo" loading="lazy" width="60" height="60">
+                        </div>
+                    </div>
+                    <div class="research-content">
+                        <h3><a href="https://crest-centre.net/" target="_blank" class="research-link">CREST, The University of Adelaide</a></h3>
+                        <p class="position">Research Intern, Adelaide, Australia</p>
+                        <ul class="research-achievements">
+                            <li>Led a 36-participant study on LLM-based software engineering tasks with multi-class dependencies and iterative refinement</li>
+                            <li>Analyzed GPT logs, test outcomes, and screen recordings to create data-driven guidelines, boosting developer productivity by ~20%</li>
+                            <li>Received a strong recommendation letter acknowledging first-author level contributions to the research</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>KAIST (Korea Advanced Institute of Science and Technology)</h3>
+                <p class="degree">B.S., Computer Science</p>
+                <p class="period">Mar. 2023 – (Expected) Aug. 2026</p>
+                <p class="location">Daejeon, South Korea</p>
+                <ul class="achievements">
+                    <li>Dean's List (Top 2%)</li>
+                    <li>CoE Leadership Award (Mar. 2025)</li>
+                    <li>All courses conducted in English; planning Ph.D. in AI</li>
+                </ul>
+                <div class="relevant-courses">
+                    <strong>Relevant Coursework:</strong>
+                    <span>Artificial Intelligence and Machine Learning (A), AI & Simulation in Biological Sciences (A+), Intelligent Robot Design and Programming (A+), Data Structure (A-), System Programming (A-)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2>Publications</h2>
+            
+            <div class="publication-category">
+                <h3>Published</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <h4>One Shot is Enough: Consolidating Multi-Turn Attacks into Efficient Single-Turn Prompts for LLMs</h4>
+                        <p class="authors">Junwoo Ha*, <strong>Hyunjun Kim*</strong>, Sangyoon Yu, Haon Park, Ashkan Yousefpour, Yuna Park, Suhyun Kim†</p>
+                        <p class="venue">ACL main, 2025</p>
+                        <p class="description">Introduced M2S method for efficient LLM jailbreaking (95.9% success). Reduced LLM security testing time by 80%+ by consolidating multi-turn attacks.</p>
+                        <a href="https://arxiv.org/abs/2503.04856" target="_blank" class="paper-link">Paper</a>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>Optimizing Retrieval Strategies for Financial Question Answering Documents in Retrieval-Augmented Generation Systems</h4>
+                        <p class="authors">Sejong Kim*, Hyunseo Song*, Hyunwoo Seo*, <strong>Hyunjun Kim*†</strong></p>
+                        <p class="venue">ICLR Advances in Financial AI Workshop, 2025</p>
+                        <p class="description">Achieved 86% improvement in retrieval accuracy across 7 real-world finance QA datasets. Reduced LLM hallucinations and accelerated compliance-critical insights at scale.</p>
+                        <a href="https://arxiv.org/abs/2503.15191" target="_blank" class="paper-link">Paper</a>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>Humanity's Last Exam</h4>
+                        <p class="authors">Long Phan et al. (including <strong>Hyunjun Kim</strong>)</p>
+                        <p class="venue">arXiv:2501.14249, 2025</p>
+                        <p class="description">Contributed to large-scale collaborative evaluation of AI capabilities.</p>
+                        <a href="https://arxiv.org/abs/2501.14249" target="_blank" class="paper-link">Paper</a>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>The Impact of Prompt-Based Personality Induction on LLMs Safety</h4>
+                        <p class="authors">Yuna Park, Yujin Kim, Sangyoon Yu, Junwoo Ha, <strong>Hyunjun Kim</strong>, Wonwoo Ro, Suhyun Kim</p>
+                        <p class="venue">KCC 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-category">
+                <h3>Under Review</h3>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <h4>OBJEX(MT): Objective EXtraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn Jailbreaks</h4>
+                        <p class="authors"><strong>Hyunjun Kim</strong>, Junwoo Ha, Jiyoung Park, Sangyoon Yu, Haon Park</p>
+                        <p class="venue">Preprint (Under review) NeurIPS 2025 Workshop on Multi-Turn Interactions in Large Language Models</p>
+                        <p class="description"><strong>First author.</strong> Proposed OBJEX(MT), a benchmark for objective extraction + metacognitive calibration of LLM-as-a-Judge under multi-turn jailbreaks.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>Personality Plus: How System-Level Behavioral Customization Boosts Jailbreak Vulnerabilities</h4>
+                        <p class="authors">Yuna Park*, Yujin Kim*, Won Woo Ro, <strong>Hyunjun Kim</strong>, Junwoo Ha, Jiyoung Park, Garam Kim, Suhyun Kim</p>
+                        <p class="venue">Under review AAAI, 2026 AI Alignment Track</p>
+                        <p class="description">Explores personality-driven jailbreak techniques in collaboration with KIST, KAIST, SNU, Yonsei, and University of Seoul.</p>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>Experimental Analysis of Productive Interaction Strategy with ChatGPT: User Study on Function and Project-level Code Generation Tasks</h4>
+                        <p class="authors"><strong>Hyunjun Kim</strong>, Sangwon Hyun, Jinhyuk Jang, Hyojin Choi, and M. Ali Babar</p>
+                        <p class="venue">Preprint, (Under review) TOSEM 2026</p>
+                        <p class="description">Investigating how different prompting strategies optimize LLM performance in real-world software engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2>Awards & Honors</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <h3>Gold Award</h3>
+                    <p class="award-title">4th UNIST-KAIST-POSTECH Data Science Competition</p>
+                    <p class="award-date">Jan. 2025</p>
+                    <p class="award-description">Led development of an advanced RAG system for financial data analytics. Expanded into research paper published at ICLR Advances in Financial AI Workshop, 2025.</p>
+                    <a href="https://www.linkedin.com/in/hyunjun-kim-2354a929b/details/honors/1352771353/multiple-media-viewer/?profileId=ACoAAEiCiAkBaa9dyzE2NBN-Mn4MjwPgX1pcP18&treasuryMediaId=1736519558942" target="_blank" rel="noopener noreferrer" class="award-link" aria-label="View data science competition presentation on LinkedIn">View Presentation</a>
+                    <div class="award-image">
+                        <img src="input/datascience-competition.png" alt="Gold award certificate from 4th UNIST-KAIST-POSTECH Data Science Competition" class="award-photo" loading="lazy" width="250" height="200">
+                    </div>
+                </div>
+
+                <div class="award-item">
+                    <h3>CoE Leadership</h3>
+                    <p class="award-title">KAIST College of Engineering</p>
+                    <p class="award-date">Mar. 2025</p>
+                    <p class="award-description">Recognized for outstanding achievements beyond academics and research.</p>
+                </div>
+
+                <div class="award-item">
+                    <h3>Dean's List</h3>
+                    <p class="award-title">KAIST</p>
+                    <p class="award-date">Dec. 2023</p>
+                    <p class="award-description">Achieved top 2% ranking among freshmen.</p>
+                </div>
+
+                <div class="award-item">
+                    <h3>Excellence Award</h3>
+                    <p class="award-title">Generative AI Application Contest</p>
+                    <p class="award-date">Nov. 2024</p>
+                    <p class="award-description">Honored for innovative application of generative AI technologies.</p>
+                </div>
+
+                <div class="award-item">
+                    <h3>Excellence Award</h3>
+                    <p class="award-title">Korea Tourism Data Lab Best Practices</p>
+                    <p class="award-date">Nov. 2024</p>
+                    <p class="award-description">Awarded for "Transforming Daejeon via Tourism Data Analysis," validated by a 288-student survey.</p>
+                </div>
+
+                <div class="award-item">
+                    <h3>Excellence Award</h3>
+                    <p class="award-title">Youth SW Mentorship Essay Contest</p>
+                    <p class="award-date">Dec. 2024</p>
+                    <p class="award-description">Mentored middle/high school students in coding and authored a recognized essay on their growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Experience -->
+    <section class="experience">
+        <div class="container">
+            <h2>Additional Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <h3>Intelligent Robot Design and Programming - Project VIRUS</h3>
+                    <p class="position">Spring 2025 (Grade: A+)</p>
+                    <p class="description">
+                        Developed VIRUS (Versatile Intelligent Robotic Unit for Strategy), an autonomous combat robot integrating LLM and computer vision for tactical commands. Led voice command and natural language understanding pipeline, achieving 70.8% win rate on AlpacaEval 2.0 benchmark.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/hyunjun1121/-Project-VIRUS-Intelligent-Robot-Design-and-Programming" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View VIRUS project on GitHub">GitHub Repository</a>
+                        <a href="https://drive.google.com/drive/folders/1n-nTtsy7D42GhrgnLTG4PHX9isWP6CfR" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Watch VIRUS project demo videos">Demo Videos</a>
+                    </div>
+                    <div class="project-image">
+                        <img src="input/virus-robot.png" alt="VIRUS autonomous combat robot integrating LLM and computer vision for tactical commands" class="project-photo" loading="lazy" width="250" height="200">
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Teaching Assistant</h3>
+                    <p class="position">Feb. 2024 – Present</p>
+                    <p class="description">
+                        <strong>[CS101] Introduction to Programming, TA</strong><br>
+                        Streamlined Python lab assignments for 50 students weekly with hands-on English guidance. Delivered English-language mentoring and led discussions, enhancing coding proficiency for a diverse cohort.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Special Issues: Entrepreneurship & Innovation</h3>
+                    <p class="position">Fall 2023 (Grade: A0)</p>
+                    <p class="instructor">Instructor: Prof. Jongchul Kim, Founding Member, McKinsey Seoul</p>
+                    <p class="description">
+                        Analyzed early-adopter segments for "Answerock" using McKinsey's seven-step framework. Delivered a top-graded report recommending high-impact feature enhancements and a phased rollout strategy.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://www.linkedin.com/in/hyunjun-kim-2354a929b/overlay/1741601614535/single-media-viewer/?profileId=ACoAAEiCiAkBaa9dyzE2NBN-Mn4MjwPgX1pcP18" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View entrepreneurship course presentation on LinkedIn">View Presentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Email:</strong> hyunjun1121@kaist.ac.kr
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> +41 076 268 52 54
+                    </div>
+                    <div class="contact-item">
+                        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hyunjun1121" target="_blank">linkedin.com/in/hyunjun1121</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=KjwPYpoAAAAJ&hl=ko" target="_blank">scholar.google.com</a>
+                    </div>
+                </div>
+                <div class="languages">
+                    <h3>Languages</h3>
+                    <p><strong>English:</strong> Capable of presenting and debating complex topics in academic meetings and conferences</p>
+                    <p><strong>Korean:</strong> Native</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hyunjun Kim. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

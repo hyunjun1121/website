@@ -1,0 +1,26 @@
+🔗 소셜 링크:
+LinkedIn 프로필 URL (현재: # 링크): https://www.linkedin.com/in/hyunjun1121
+Google Scholar 프로필 URL (현재: # 링크): https://scholar.google.com/citations?user=KjwPYpoAAAAJ&hl=ko
+개인 포트폴리오 URL (현재: # 링크): 지금 우리가 만드는게 개인 포트폴리오임. 그래서 이 link와 관련한거 다 없애.
+📄 논문 링크:
+"One-Shot is Enough..." 논문 PDF 링크: https://arxiv.org/abs/2503.04856
+"Optimizing Retrieval Strategies..." 논문 PDF 링크: https://arxiv.org/abs/2503.15191
+"Humanity's Last Exam" 논문 PDF 링크: https://arxiv.org/abs/2501.14249
+기타 논문들의 PDF 링크: 위 3개 빼고는 링크 없음.
+🏆 수상 관련 자료:
+4th UNIST-KAIST-POSTECH Data Science Competition PPT 파일 링크: https://www.linkedin.com/in/hyunjun1121/overlay/honors/1352771353/multiple-media-viewer/?profileId=ACoAAEiCiAkBaa9dyzE2NBN-Mn4MjwPgX1pcP18&treasuryMediaId=1736519558942
+특별과목 Entrepreneurship & Innovation PPT 파일 링크: https://www.linkedin.com/in/hyunjun1121/overlay/1741601614535/single-media-viewer/?profileId=ACoAAEiCiAkBaa9dyzE2NBN-Mn4MjwPgX1pcP18
+
+아래 요청한 사진은 모두 ./assets에 넣어놓음.
+```
+🏢 회사/기관 로고 이미지:
+KAIST 로고: 
+CREST - University of Adelaide 로고
+AIM Intelligence 로고
+MLAI@KAIST 로고
+📸 개인 사진:
+프로필 사진 (현재는 이니셜 "HK"로 대체되어 있음)
+```
+🌐 추가 정보:
+개인 웹사이트 도메인 (배포 시 필요): hyunjun-kim으로 배포하고 싶음.
+추가하고 싶은 프로젝트나 경험 (있다면): 없음.

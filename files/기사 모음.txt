@@ -1,0 +1,144 @@
+
+##기사 내용 reference 
+###Optimizing Retrieval Strategies for Financial Question Answering Documents in Retrieval-Augmented Generation Systems 논문 관련
+
+####내가(김현준) 링크드인에 올린 글 
+
+🚀 𝐈’𝐦 𝐞𝐱𝐜𝐢𝐭𝐞𝐝 𝐭𝐨 𝐬𝐡𝐚𝐫𝐞 𝐭𝐡𝐚𝐭 𝐨𝐮𝐫 𝐮𝐧𝐝𝐞𝐫𝐠𝐫𝐚𝐝𝐮𝐚𝐭𝐞 𝐫𝐞𝐬𝐞𝐚𝐫𝐜𝐡 𝐩𝐚𝐩𝐞𝐫 𝐡𝐚𝐬 𝐛𝐞𝐞𝐧 𝐚𝐜𝐜𝐞𝐩𝐭𝐞𝐝 𝐭𝐨 𝐭𝐡𝐞 𝐈𝐂𝐋𝐑 𝟐𝟎𝟐𝟓 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐬 𝐢𝐧 𝐅𝐢𝐧𝐚𝐧𝐜𝐢𝐚𝐥 𝐀𝐈 𝐖𝐨𝐫𝐤𝐬𝐡𝐨𝐩!
+As a first- and second-year undergraduate team—with no prior experience in academic publishing—this milestone means a lot to us.
+Our paper,
+ 📄 Optimizing Retrieval Strategies for Financial Question Answering Documents in Retrieval-Augmented Generation Systems,
+ was co-authored with Sejong Kim, 송현서 and 현우서—and I had the honor of serving as both a co-first author and corresponding author.
+💡 In this work, we propose a domain-specific RAG pipeline that significantly enhances document retrieval for financial QA tasks.
+We tackled the complex nature of financial texts with:
+- 🔍 Fine-tuned financial embedding models
+- ⚙️ A three-stage architecture (pre-retrieval, retrieval, post-retrieval)
+- 🔄 Hybrid retrieval and reranking strategies
+- 📈 State-of-the-art performance on 7 benchmark datasets
+But more than the results, what I’ll remember most are the long nights, winter break study marathons, and endless whiteboard sessions that made this possible. From campus libraries to GitHub commits at 3am—we learned, failed, and built together. 🙌
+
+🔗 Paper: https://lnkd.in/gNcMdxSt
+🔗 GitHub: https://lnkd.in/gZjjfw-T
+📰 KAIST press release: https://lnkd.in/gABMnxAr
+
+Grateful to KAIST for supporting our journey—and especially to my incredible teammates. Let’s keep pushing the boundaries of what undergraduates can do in research. 💥
+Thanks to Taehyeon Park, 박대영, Yongjae Lee, 한울 ‍이, 박재용 and Jacob Chanyeol Choi for their helpful advice and support during this project.
+
+####논문 경험 없는 학부 1·2학년 4인 팀, ICLR 2025 금융 AI 워크숍에 논문 채택​
+조회수 : 2995 등록일 : 2025-04-01 작성자 : 홍보실
+왼쪽부터) 김현준 전산학부 학부 과정(공동 1저자, 교신저자), 김세종 산업 및 시스템공학과 학부 과정(공동 1저자, 전산학부 복수 전공), 송현서 전산학부 학부 과정(공동 1저자), 서현우 산업 및 시스템공학과 학부 과정(공동 1저자)
+
+< 왼쪽부터) 김현준 전산학부 학부 과정(공동 1저자, 교신저자), 김세종 산업 및 시스템공학과 학부 과정(공동 1저자, 전산학부 복수 전공), 송현서 전산학부 학부 과정(공동 1저자), 서현우 산업 및 시스템공학과 학부 과정(공동 1저자) >
+
+학부 1, 2학년으로만 구성된 4인 학생 팀의 논문이 인공지능 분야 국제 학술대회인 ‘International Conference on Learning Representations (ICLR) 2025’의 ‘Advances in Financial AI Workshop’에 채택됐다. 
+
+이번에 채택된 논문 “Optimizing Retrieval Strategies for Financial Question Answering Documents in Retrieval-Augmented Generation Systems”은 김현준, 김세종, 송현서, 서현우 학생(모두 공동 1저자)이 함께 작성했으며, 김현준 학생이 교신저자를 겸했다. 특히 모든 팀원이 논문 작성 경험이 전혀 없는 학부 저학년 학생들로만 구성되어 그 의미가 더욱 크다. 
+
+이 연구는 대규모 언어 모델(LLM)이 금융 질의응답 시스템에서 활용될 때 필요한 정보를 더 정확하게 검색하고 활용하는 방법을 개선했다. 연구팀은 기존 검색 증강 생성(Retrieval-Augmented Generation, RAG) 시스템의 한계를 극복하기 위해 ‘사전 검색(pre-retrieval)’, ‘검색(retrieval)’, ‘사후 검색(post-retrieval)’ 3단계 접근법을 도입했다. 
+
+사전 검색 단계에서는 질의어와 문서 데이터를 효과적으로 전처리하는 기술을 개발했고, 검색 단계에서는 금융 도메인에 특화된 임베딩 모델을 미세 조정하여 검색 정확도를 높였다. 특히 의미 기반 검색과 키워드 기반 검색을 결합한 하이브리드 접근법을 통해 검색 성능을 크게 향상시켰다. 사후 검색 단계에서는 검색된 문서의 순위를 재조정하고 최적의 문서만을 선별하는 기술을 적용했다.
+
+금융 문서 검색 최적화를 위한 RAG 파이프라인 구조도
+
+< 금융 문서 검색 최적화를 위한 RAG 파이프라인 구조도 >
+
+이 연구 결과는 7개의 금융 질의응답 데이터셋에서 평가되었으며, 기존 방법 대비 눈에 띄는 성능 향상을 보였다. 
+
+연구팀은 교내에서 진행된 “KB증권과 함께하는 제4회 UNIST – KAIST - POSTECH AI & 데이터사이언스 경진대회”에서 금상(상금 200만 원)을 수상한 프로젝트를 더욱 발전시켜 논문으로 완성했다. 
+
+김현준 학생은 “2024 가을학기 내내 팀원들과 밤부터 새벽까지 대회 작업을 했고, 수상 후에도 겨울 방학 동안 교양 분관 스터디룸에서 밤을 새가며 논문을 작성했다”라며 “전혀 경험이 없는 상태에서 시작했지만, 팀원들과 함께 끊임없이 토론하고 연구한 결과 국제 학술대회 워크숍에 논문이 채택되는 값진 성과를 얻을 수 있었다”라고 소감을 밝혔다. 
+
+이번 연구의 의의는 대규모 언어 모델이 금융 정보를 더 정확하게 처리할 수 있게 함으로써, 복잡한 금융 문서에서 필요한 정보를 빠르고 정확하게 찾아내는 데 기여한다는 점이다. 
+
+송현서 학생은 “투자자들이 기업 재무제표나 공시 자료를 분석할 때 더 정확한 정보를 얻을 수 있게 돕고, 금융 기관들의 의사결정 과정에서 중요한 도구로 활용될 수 있다.”라며 연구의 활용성을 강조했다. 
+
+김세종 학생은 “우리 연구가 실제 금융 환경에서 투자자들과 애널리스트들이 더 정확한 정보에 기반한 의사결정을 내리는 데 도움이 되길 바란다”라며 “학부생으로서 국제 학술대회에 논문을 발표하게 되어 매우 기쁘고, 앞으로도 계속해서 AI와 금융의 융합 연구에 매진하겠다”라고 말했다. 
+
+서현우 학생은 “학교의 지원으로 학회 참가비 및 여행 경비 부담을 덜었다”라며 학회 참가비 및 여행 경비를 지원해준 KAIST에 감사한 마음을 전했다. 
+
+관계자는 "학부 저학년 학생들이 국제 학술대회급 연구 성과를 낸 것은 매우 의미 있는 일"이라며 "앞으로도 KAIST는 학생들의 창의적인 연구와 도전을 적극 지원할 것"이라고 밝혔다.
+
+<논문 정보>
+- 논문 링크: https://arxiv.org/abs/2503.15191
+
+- 프로젝트 웹사이트: https://github.com/seohyunwoo-0407/GAR
+
+
+####금융 검색을 최적화하는 3단계 RAG 시스템
+기자명 유채윤 기자   입력 2025.05.27 14:03  수정 2025.05.27 16:43  댓글 0
+ 
+바로가기 복사하기 본문 글씨 줄이기 본문 글씨 키우기
+SNS 기사보내기페이스북(으)로 기사보내기 트위터(으)로 기사보내기 카카오스토리(으)로 기사보내기 URL복사(으)로 기사보내기 이메일(으)로 기사보내기 다른 공유 찾기 기사스크랩하기
+전산학부 김현준, 송현서, 산업및시스템공학과 김세종, 서현우 학부생 연구팀: Optimizing Retrieval Strategies for Financial Question Answering Documents in Retrieval-Augmented Generation Systems - 「International Conference on Learning Representations 2025」
+
+우리 학교의 학부생으로만 이루어진 연구팀이 금융 시스템에 응용할 수 있는 3단계 검색 방법을 개발했다. 이 연구를 통해 금융 질의응답 시스템에서 필요한 정보를 더 정확하게 검색하고 활용할 수 있게 되었다. 본지는 이번 연구에 제1저자로 참여한 김현준 학우(전산학부 23), 김세종 학우(산업및시스템공학과 23), 송현서 학우(전산학부 24)를 만나 인터뷰했다.
+
+RAG 시스템
+
+RAG(Retrieval Augmented Generation)시스템이란 대규모 언어 모델(LLM)의 출력을 개선하기 위해 외부 지식을 활용하는 기술이다. 이 시스템을 활용하면 LLM이 답변을 생성하기 전에 관련된 정보를 사전에 검색하여 적용할 수 있다. 이를 통해 정보의 누락이나 존재하지 않는 정보를 있는 것처럼 전달하는 인공지능 환각 현상을 방지할 수 있어 더 정확하고 풍부한 답변을 얻을 수 있다.  RAG 시스템은 LLM에 외부 지식 베이스를 연결하여 모델의 생성 능력과 사실 관계 파악 능력을 향상시키므로, RAG 모델의 성능을 높이기 위해서는 고품질의 지식 베이스 구축과 효율적인 검색 능력이 필요하다. 
+
+3단계 접근법
+
+이번 학부생 연구팀은 금융 질의응답(Financial QA)에 특화된 고성능 RAG 시스템을 새롭게 제안했다. 기존 RAG 방식의 성능은 검색 시스템의 질에 의존하는 측면이 크며, 금융 문서의 복잡한 구조나 문맥을 반영하는데 여러 어려움이 있었다. 특히 10-K 보고서(미국 증권거래위원회에 공시하여야 하는 회사의 연간 보고서) 등 복잡한 금융 문서를 다룰 때는 고유 용어, 다단계 표 구조 등으로 인해 일반적인 방법론으로는 문서의 해석하는 데 있어 한계가 존재했다. 연구팀은 이러한 문제를 해결하기 위해 질문 및 문서 전처리, 임베딩 모델 파인튜닝, 하이브리드 검색, 재정렬을 포함하여 파이프라인을 설계했다. 연구팀은 사전 검색(Pre-retrieval), 검색(Retrieval), 사후 처리(post-retrieval)의 3단계 접근법을 통해 효율적이고 종단형(End-to-end)으로 동작하는 RAG 시스템을 구축했다.
+
+사전 검색 단계에서는 질의와 문서를 다양한 기법을 적용하여 전처리했다. 질의 확장 기법을 통해 모호한 질문을 보다 구체화하거나, 문서 내 마크다운(Markdown, 경량 마크업 언어의 일종) 구조 재구성을 통해 금융 문서의 복잡하고 이질적인 구조와 표, 그래프, 데이터 등을 효과적으로 보존하였다. 이를 통해 모델이 보다 정교하게 문서를 해석할 수 있도록 했다.
+
+검색 단계에서는 금융 도메인에 특화된 임베딩 모델(Embedding model, 데이터를 벡터로 변환하는 기계학습 모델)을 특정 작업에 더 적합하도록 추가 학습시켜 적용했고, 단어 일치를 기반으로 검색을 수행하는 희소(Sparse) 검색과 의미적 유사도를 기반으로 검색을 수행하는 밀집(Dense) 검색을 결합한 하이브리드 검색 전략을 도입했다. 희소 검색은 키워드 기반의 정밀함을, 밀집 검색은 문장 간 의미적 유사성을 잘 포착할 수 있다는 장점이 있다. 이 둘을 함께 사용하여 보다 포괄적이면서도 정확하게 관련 문서를 탐색할 수 있게 되었다.
+
+사후 처리 단계에서는 검색된 문서 중 실제 질문과 가장 관련성 높은 문서를 재정렬하고, DPO(Direct Preference Optimization) 기법을 활용하여 사람의 선호도를 반영한 문장을 생성하도록 LLM을 직접적으로 최적화하였다. DPO 기법은 기존 강화학습 방법보다 성능이 높은 동시에 비교적 학습이 간단하다. 연구팀은 이 사후 처리 과정을 통해 실제 질문-응답의 품질을 높이고, 불필요한 정보 삽입을 크게 줄일 수 있었다.
+이처럼 연구팀은 기존의 여러 금융 AI 기법을 한데 모은 뒤 자체적으로 개발한 기법을 추가하여 다양한 금융 분야에서 활용할 수 있는 포괄적 방법론을 구축하고, 최적화하여 최종 프레임워크를 제시했다.  
+
+연구 성과와 의의
+
+해당 시스템은 총 7개의 대표적인 금융 QA 데이터셋(FinDER, FinQABench, FinanceBench, TATQA, FinQA, ConvFinQA, MultiHiertt)을 활용해 평가되었으며, 특히 NDCG와 같은 정량적 성능 지표에서 기존 방법 대비 현저한 성능 향상을 입증했다. 이는 보다 적절한 문서들이 검색되었음을 의미하며, 결과적으로 LLM의 응답 품질도 함께 향상되었음을 시사한다. 
+
+이번 연구는 기존 LLM 서비스 성능의 한계를 넘어서고, 상용화의 여러가지 어려움을 개선하는 데 큰 도움이 되리라 보인다. 또한 위 연구의 실제 금융 산업 적용 가능성 역시 높게 평가된다. 금융 회사 내부 시스템, 투자자 질의응답 서비스, 금융 보고서 자동 분석 등 여러 응용 분야에서 활용될 수 있으며, 향후 의료나 법률과 같은 전문성이 요구되는 다른 분야로의 확장도 기대된다.
+
+특히 주목할 점은 이 연구가 학부 1, 2학년 4명으로만 구성되어 진행되었고, 관련 업계 선배 및 전문가들에게 직접 연락을 취해 자문을 구하면서 주도적으로 연구를 발전시켰다는 것이다. 4명 모두 논문을 직접 작성해 본 경험이 없었기에 논문 경험이 있는 친구들에게 조언을 구하고, 주기적으로 꾸준히 만남을 가지며 논문 완성과 출판을 위해 많은 노력을 기울였다. 논문의 교신 저자인 김현준 학우는 “증권사 근무 경험이 없는 상태에서 실제 현장의 문제를 이해하기 위해 금융권 전문가들에게 직접 100건 이상 메일을 보내고, 답신이 온 열 명 남짓의 전문가와 여러 만남을 가지며 조언을 얻었다”라며, 특히 “우리 학교 출신 금융권 선배님들께서 도움을 많이 주셨다”라고 감사함을 표했다. 
+
+학부 후배들을 위한 조언을 구하는 질문에서 김세종 학우는 “우리 학교 학생들이 내부에서는 평가 과정에서 성적이 많이 나누어지지만, 생각보다 훨씬 대단한 사람들이 많다”라며, “학부생 수준에서 진행된 프로젝트 진행이나 대회 참가도 굉장히 유의미하고 교외에서도 충분히 경쟁력이 있으니 주저하지 말고 일단 도전해 보아라”고 응원의 말을 전했다. 특히 학부 1학년 시기에 연구를 한 송현서 학우는 “했을 때 후회하는 것보다 안 했을 때 후회하는 것이 크다”며, “본인이 관심있는 분야가 있다면 도전하는 용기가 중요하다”라고 말했다. 
+
+앞으로의 연구 계획이나 진로를 묻는 질문에서 김세종 학우는 “현재 소속되어 있는 연구실에서 LLM이 사회에 미치는 영향이나, 어떻게 사용자들이 LLM을 더 효율적으로 사용할 수 있을지 등 LLM의 사회친화적 부분을 중점으로 연구하고 있다”라고 밝혔다. “추후에는 LLM과 강화학습을 융합한, 더 새로운 과학적 발전을 이루고 싶다”라는 포부를 밝혔다. 김현준 학우는 이번 연구를 포함한 금융 AI, HCL, AI 보안 등 다양한 분야에서의 논문 경험을 언급하며 “아직 구체적인 방향은 정하지 않았지만, 궁극적으로는 학계와 산업계 모두에서 유능한 연구원이 되고 싶다”라는 목표를 알렸다. 송현서 학우는 “이번 2025 ICLR 학회를 경험하며 세상이 정말 넓다는 것을 배웠다”라고 말하며 “꿈을 위해 전산학부뿐만 아니라 기계공학과를 복수전공하고 있으며, 포괄적으로는 컴퓨터 프로그램, AI 등과 현실세계의 상호작용을 더 연구하고 싶다”라고 밝혔다. 
+
+
+
+###one shot is enogh 논문 관련
+####내가(김현준) 링크드인에 올린 글 
+
+🎉 𝑭𝒓𝒐𝒎 𝒂 𝑷𝒂𝒓𝒕-𝑻𝒊𝒎𝒆 𝑰𝒏𝒕𝒆𝒓𝒏 𝒕𝒐 𝑭𝒊𝒓𝒔𝒕 𝑨𝒖𝒕𝒉𝒐𝒓 𝒂𝒕 𝑨𝑪𝑳 2025 🎉 Six months ago, I had never even heard of AI safety. Today, I’m thrilled to share that our paper, "𝐎𝐧𝐞-𝐒𝐡𝐨𝐭 𝐢𝐬 𝐄𝐧𝐨𝐮𝐠𝐡: 𝐂𝐨𝐧𝐬𝐨𝐥𝐢𝐝𝐚𝐭𝐢𝐧𝐠 𝐌𝐮𝐥𝐭𝐢-𝐓𝐮𝐫𝐧 𝐀𝐭𝐭𝐚𝐜𝐤𝐬 𝐢𝐧𝐭𝐨 𝐄𝐟𝐟𝐢𝐜𝐢𝐞𝐧𝐭 𝐒𝐢𝐧𝐠𝐥𝐞-𝐓𝐮𝐫𝐧 𝐏𝐫𝐨𝐦𝐩𝐭𝐬 𝐟𝐨𝐫 𝐋𝐋𝐌𝐬" has been accepted to 𝐀𝐂𝐋 𝟐𝟎𝟐𝟓 𝐦𝐚𝐢𝐧 𝐜𝐨𝐧𝐟𝐞𝐫𝐞𝐧𝐜𝐞—one of the most prestigious venues in natural language processing. As a KAIST undergraduate, this journey began when I stumbled upon a research intern opportunity at AIM Intelligence. Despite a 5–6 hour weekly commute from Daejeon to Gangnam, I couldn’t pass up the chance to contribute to real-world research in LLM security. The result? A brand new paradigm for jailbreak attacks. 🔍 𝐖𝐡𝐚𝐭 𝐰𝐞 𝐝𝐢𝐬𝐜𝐨𝐯𝐞𝐫𝐞𝐝 We introduced the 𝐌𝐮𝐥𝐭𝐢-𝐭𝐮𝐫𝐧-𝐭𝐨-𝐒𝐢𝐧𝐠𝐥𝐞-𝐭𝐮𝐫𝐧 (𝐌𝟐𝐒) framework: a systematic method to compress multi-turn jailbreak prompts into a single-turn format using three simple strategies—𝐇𝐲𝐩𝐡𝐞𝐧𝐢𝐳𝐞, 𝐍𝐮𝐦𝐛𝐞𝐫𝐢𝐳𝐞, 𝐚𝐧𝐝 𝐏𝐲𝐭𝐡𝐨𝐧𝐢𝐳𝐞. Surprisingly, these single-turn attacks: - Achieved up to 𝟗𝟓.𝟗% 𝐀𝐭𝐭𝐚𝐜𝐤 𝐒𝐮𝐜𝐜𝐞𝐬𝐬 𝐑𝐚𝐭𝐞 on Mistral-7B - Outperformed original multi-turn prompts by up to 𝟏𝟕.𝟓% on GPT-4o - Required 𝟕𝟎–𝟖𝟎% 𝐟𝐞𝐰𝐞𝐫 𝐭𝐨𝐤𝐞𝐧𝐬 compared to multi-turn attacks 💡 The takeaway? Even without the iterative back-and-forth of conversation, a well-crafted single-turn prompt can be just as (or even more) potent—posing serious implications for LLM safety. 🧠 The research journey I had the privilege of working alongside Junwoo Ha as co–first author. Aim Intelligence empowered us with full ownership: from ideation to experimentation, to navigating a difficult review phase where we turned around initial rejections with additional experiments and detailed rebuttals. 🙏 Huge thanks to Aim Intelligence and especially Sangyoon (David) ­Yu for trusting me, funding the experiments, and guiding this journey with unwavering support. 📄 For those interested, the full paper explores how formatting and compression strategies expose blind spots in current LLM defenses—and what this means for red teaming and safeguard design. 👉 If you're working in LLM security or adversarial robustness, I'd love to connect and hear your thoughts. 
+
+
+####회사의 링크드인 글 1 
+
+🎉 We’re excited to share that our paper “One-Shot is Enough: Consolidating Multi-Turn Attacks into Efficient Single-Turn Prompts for LLMs” has been accepted to the ACL 2025 main conference. Why it matters? ✔️ M2S framework compresses multi-turn jailbreak prompts into a single turn via Hyphenize, Numberize, Pythonize. ✔️ Achieved 95.9 % attack success on Mistral-7B. ✔️ Up to 17.5 % higher ASR on GPT-4o versus original multi-turn attacks. ✔️ Uses 70–80 % fewer tokens, lowering cost and detection time. These results show that even one well-crafted prompt can defeat today’s guardrails—highlighting the urgency of robust LLM security. Huge congratulations to co-first authors Junwoo Ha, 김현준 and to the entire team led by CEO Sangyoon (David) ­Yu for driving this breakthrough. 📄 Paper: https://lnkd.in/df54CwCV 📎 Press release: https://lnkd.in/djs6apN2 🤝 Building safer AI? Let’s connect. 
+
+####회사의 링크드인 글 2 
+💥 One-Shot is Enough Review: Efficient Jailbreaks with Just One Prompt Multi-turn jailbreaks are powerful—but slow, manual, and hard to scale. What if one shot was all it took? We introduce M2S: a simple conversion method that collapses multi-turn conversations into a structured prompt—boosting red-team capability. Key findings 🧠 M2S hits 95.9 % ASR on Mistral-7B, +17.5 pp over GPT-4o’s multi-turn score 🔁 Even Llama Guard 3 8B fail 71 % of the time against one-shot attacks 💡 Hyphenize, Numberize, Pythonize—simple formats for scalable red-teaming We wrote a quick review that unpacks how M2S works, what makes it effective, and what it means for enterprise AI safety. 📄 Paper: https://lnkd.in/df54CwCV 👉 Read the brief: https://lnkd.in/dygqirrP 
+
+
+####회사 블로그 글 
+
+Quick-Take One-Shot is Enough: Consolidating Multi-Turn Attacks into Efficient Single-Turn Prompts for LLMs May 20, 2025 Quick-Take One-Shot is Enough: Consolidating Multi-Turn Attacks into Efficient Single-Turn Prompts for LLMs Why this paper matters Today’s strongest jailbreaks still rely on painstaking, human-crafted multi-turn conversations. That limits scale and keeps automated red-team pipelines from stress-testing models at production speed. “One-Shot is Enough” shows a surprisingly simple fix: collapse those conversations into a single, well-formatted prompt without losing punch. Their Multi-turn-to-Single-turn (M2S) recipe lifts Attack Success Rates (ASRs) to 95.9 % on Mistral-7B and even beats GPT-4o’s own multi-turn score by +17.5 pp—all while cutting the labour cost to zero. 2. Key contributions: What it adds and Why it’s important M2S conversion trio Hyphenize, Numberize, Pythonize templates that repack each conversation as a single prompt Makes large-scale, automated red-teaming feasible; no agent loops required Best-of-three ensemble Always pick the highest StrongREJECT score among the three formats Pushes ASR up to 95.9 % on Mistral-7B and 89.0 % on GPT-4o Bypass analysis Reports guard-rail bypass on Llama Guard 3 8B (71 % with ensemble) Shows that safety filters tuned for multi-turn context miss single-shot attacks Tactic taxonomy Maps which adversarial tricks gain or lose power after conversion Gives defenders a ranked to-fix list; gives attackers a scripted short-list 3. Methodology in a nutshell Dataset – Start with 537 successful human jailbreak dialogs from the Multi-turn Human Jailbreak (MHJ) set. Conversion – Apply each of the three M2S formats; optionally take the best (ensemble). Evaluation – Score harmfulness with StrongREJECT (0-1) and mark a jailbreak if ≥ 0.25. Record ASR, “Perfect-ASR” (score = 1), and guard-rail bypass. 4. Experimental highlights GPT-4o: Ensemble M2S hits 89 % ASR (+17.5 pp over multi-turn) and 0.82 mean harm score. Mistral-7B: Ensemble peaks at 95.9 % ASR, 24.4 % perfect-ASR—all in one prompt. Guard-rail bypass: Single-turn prompts slip past Llama Guard 3 8B 71 % of the time vs. 66 % for the original conversations. Format matters: Pythonize shines on code-savvy models; Hyphenize on hierarchy-hungry ones—hinting at architecture-specific parsing bugs. 5. Limitations & open questions Best-case reporting – Results assume you can always choose the winning format; a fully automated selector is future work. Semi-manual pipeline – Tactic extraction and format selection still need light human steering. Single-turn only – The paper doesn’t tackle chaining or self-refining single-turn attacks yet. Evaluator lock-in – Swapping out StrongREJECT for weaker graders may shift absolute numbers. 6. What this means Faster red-team loops Drop M2S into our CI test harness; cover hundreds of dialogs per model build. Guard-rail hardening Add “structured-prompt” detectors (bullet, numeric, code blocks) before policy checks. Training negatives Feed high-score M2S prompts into AIM Guard fine-tuning for stronger rejection behavior. Research angle Combine M2S with your ELITE multimodal rubric to see if single-shot vision attacks jump similarly. 7. TL;DR “One-Shot is Enough proves you don’t need a back-and-forth to break an LLM. By repackaging multi-turn jailbreaks into a single, cleverly formatted prompt, ASR soars to 95 % on open-source models and even dents GPT-4o. Structured bullets, numbered lists, and code blocks sneak past guard-rails that assume turn-by-turn context. If your safety checks start and end at ‘did the model refuse?’, you’re shipping with blind spots.” 
+
+####기사 에임인텔리전스 “짧은 대화로 LLM 보안 취약점 발견할 수 있어” 
+
+ 에임인텔리전스 관계자들이 ‘AI 보안 연구 논문’ 채택 기념사진 촬영을 하고 있다. (사진=에임인텔리전스) 인공지능(AI) 보안 전문 에임인텔리전스(대표 유상윤)는 자연어처리(NLP) 분야 최고 권위 학술대회 ‘ACL 2025’ 메인 컨퍼런스에 AI 보안 논문이 채택됐다고 19일 밝혔다. 이번에 채택된 논문에서는 ‘다중 턴 공격을 단일 턴 형식으로 압축하는 M2S(Multi-turn-to-Single-turn) 프레임워크’를 제안했다. M2S 프레임워크는 하이픈화(Hyphenize), 숫자화(Numberize), 파이썬화(Pythonize)라는 세가지 전략을 활용해 다중 턴 공격을 효과적으로 단일 턴으로 변환하는 방법을 체계화한 것이다. 연구 결과에 따르면, 이렇게 압축된 단일 턴 공격은 '미스트랄-7B'에서 최대 95.9%의 공격 성공률을 보인 것으로 나타났다. 'GPT-4o'에서는 기존 다중 턴 공격보다 최대 17.5% 더 효과적이었다. 특히, 다중 턴 공격에 비해 70-80% 적은 토큰을 사용하면서도 더 높은 효과를 보였다고 강조했다. 이는 반복적 대화 없이도 잘 설계된 단일 턴 프롬프트가 동등하거나 더 강력한 공격 효과를 가질 수 있음을 시사한다. 한편, 이번 연구는 김현준 한국과학기술원(KAIST) 소속 연구원이 에임인텔리전스 연구 인턴십을 수행한 결과물이다. 아이디어 구상부터 실험, 그리고 심사 과정에서의 추가 실험과 반박까지 전 과정을 공동 제1 저자인 하준우와 수행했다. ACL 2025 메인 트랙에서 발표될 예정이다. 유상윤 에임인텔리전스 대표는 "이번 연구는 현재 LLM 방어 시스템의 취약점을 명확히 보여주며, 레드팀과 안전장치 설계에 중요한 시사점을 제공하는 것"이라고 말했다. 출처 : AI타임스(https://www.aitimes.com)
+
+
+####에임인텔리전스, AI 보안 연구 논문 ACL 2025 메인 컨퍼런스 채택
+이전 기사보기다음 기사보기
+기자명유인춘 기자  입력 2025.05.19 10:42 댓글 0
+ 기사저장 페이스북(으)로 기사보내기 트위터(으)로 기사보내기 URL복사(으)로 기사보내기 이메일(으)로 기사보내기 다른 공유 찾기 바로가기 본문 글씨 키우기 본문 글씨 줄이기
+에임인텔리전스, AI 보안 연구 논문 ACL 2025 메인 컨퍼런스 채택
+에임인텔리전스, AI 보안 연구 논문 ACL 2025 메인 컨퍼런스 채택
+인공지능 언어모델(LLM) 보안 기업 에임인텔리전스(대표 유상윤)가 자연어처리 분야 최고 권위 학술대회인 ACL 2025 메인 컨퍼런스에 논문이 채택되는 성과를 이루었다고 18일 밝혔다.
+
+이번에 채택된 논문 "One-Shot is Enough: Consolidating Multi-Turn Attacks into Efficient Single-Turn Prompts for LLMs"는 다중 턴 공격을 단일 턴 형식으로 압축하는 'M2S(Multi-turn-to-Single-turn)' 프레임워크를 제안했다. M2S 프레임워크는 하이픈화(Hyphenize), 숫자화(Numberize), 파이썬화(Pythonize)라는 세 가지 전략을 활용해 다중 턴 공격을 효과적으로 단일 턴으로 변환하는 방법을 체계화했다.
+
+연구 결과에 따르면, 이렇게 압축된 단일 턴 공격은 Mistral-7B 모델에서 최대 95.9%의 공격 성공률을 보였으며, GPT-4o에서는 기존 다중 턴 공격보다 최대 17.5% 더 효과적인 것으로 나타났다. 특히 다중 턴 공격에 비해 70-80% 적은 토큰을 사용하면서도 더 높은 효과를 보인 점이 주목할 만하다. 이는 반복적인 대화 없이도 잘 설계된 단일 턴 프롬프트가 동등하거나 더 강력한 공격 효과를 가질 수 있음을 시사한다.
+
+이번 연구는 KAIST 소속 김현준 연구원이 에임인텔리전스 연구 인턴십을 수행한 결과물로, 아이디어 구상부터 실험, 그리고 까다로운 심사 과정에서의 추가 실험과 반박까지 전 과정을 공동 제1저자인 하준우와 함께 주도적으로 수행했다. 본 논문은 자연어처리 분야의 최고 권위 학술대회 ACL 2025 메인 트랙에서 발표될 예정이다.
+
+유상윤 대표는 "이번 연구는 현재 LLM 방어 시스템의 취약점을 명확히 보여주며, 레드팀(red teaming)과 안전장치 설계에 중요한 시사점을 제공한다"고 말했다. 특히 ACL 2025와 같은 권위 있는 학술대회에 논문이 채택된 것은 AI 안전성 연구 역량을 국제적으로 인정받은 사례로 평가된다.
+
+한편 에임인텔리전스는 최근 'SUDO(Screen-based Universal Detox2Tox Offense)' 프레임워크에 관한 연구로도 ACL 2025 인더스트리 트랙에 논문이 채택되는 성과를 거두었다. 이 연구에서는 상용 AI 에이전트의 보안 취약성을 실증하고, AI가 처음에는 명령을 거절하더라도 화면 정보와 반복적인 입력 조작을 통해 결국 해당 작업을 실행하게 된다는 점을 실험적으로 입증했다. 이 외에도 VLM 유해성 평가 체계 'ELITE'로 ICML 2025 채택에 이르는 등 국내 AI 안전성 연구의 위상을 높이고 있다.
