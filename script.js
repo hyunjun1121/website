@@ -558,6 +558,169 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    // ========================================
+    // Star Field Background Effect
+    // ========================================
+    const initStarField = () => {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+
+        const starField = document.createElement('div');
+        starField.className = 'star-field';
+        starField.style.position = 'absolute';
+        starField.style.top = '0';
+        starField.style.left = '0';
+        starField.style.width = '100%';
+        starField.style.height = '100%';
+        starField.style.overflow = 'hidden';
+        starField.style.zIndex = '0';
+        starField.style.pointerEvents = 'none';
+
+        // Create stars
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.position = 'absolute';
+            star.style.width = Math.random() * 3 + 1 + 'px';
+            star.style.height = star.style.width;
+            star.style.borderRadius = '50%';
+            star.style.background = `rgba(255, 255, 255, ${Math.random() * 0.8 + 0.2})`;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = `twinkle ${Math.random() * 3 + 2}s ease-in-out infinite`;
+            star.style.boxShadow = `0 0 ${Math.random() * 10 + 5}px rgba(255, 255, 255, 0.8)`;
+            starField.appendChild(star);
+        }
+
+        hero.insertBefore(starField, hero.firstChild);
+
+        // Add twinkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes twinkle {
+                0%, 100% { opacity: 1; transform: scale(1); }
+                50% { opacity: 0.3; transform: scale(0.8); }
+            }
+        `;
+        document.head.appendChild(style);
+    };
+
+    // ========================================
+    // Aurora Borealis Effect
+    // ========================================
+    const initAuroraEffect = () => {
+        const sections = document.querySelectorAll('.research, .publications');
+        sections.forEach(section => {
+            const aurora = document.createElement('div');
+            aurora.style.position = 'absolute';
+            aurora.style.top = '0';
+            aurora.style.left = '0';
+            aurora.style.width = '100%';
+            aurora.style.height = '100%';
+            aurora.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 50%, rgba(255, 0, 128, 0.1) 100%)';
+            aurora.style.backgroundSize = '200% 200%';
+            aurora.style.animation = 'auroraFlow 15s ease-in-out infinite';
+            aurora.style.pointerEvents = 'none';
+            aurora.style.zIndex = '0';
+
+            section.style.position = 'relative';
+            section.insertBefore(aurora, section.firstChild);
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes auroraFlow {
+                0%, 100% {
+                    background-position: 0% 50%;
+                    opacity: 0.3;
+                }
+                50% {
+                    background-position: 100% 50%;
+                    opacity: 0.6;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    };
+
+    // ========================================
+    // Shooting Stars Effect
+    // ========================================
+    const initShootingStars = () => {
+        if (window.innerWidth <= 768) return;
+
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                const star = document.createElement('div');
+                star.style.position = 'fixed';
+                star.style.width = '100px';
+                star.style.height = '2px';
+                star.style.background = 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent)';
+                star.style.left = Math.random() * window.innerWidth + 'px';
+                star.style.top = Math.random() * window.innerHeight / 2 + 'px';
+                star.style.transform = 'rotate(-45deg)';
+                star.style.pointerEvents = 'none';
+                star.style.zIndex = '9999';
+                star.style.animation = 'shootingStar 1.5s ease-out forwards';
+                star.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.8)';
+                document.body.appendChild(star);
+
+                setTimeout(() => star.remove(), 1500);
+            }
+        }, 3000);
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shootingStar {
+                0% {
+                    transform: rotate(-45deg) translateX(0) translateY(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: rotate(-45deg) translateX(300px) translateY(300px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    };
+
+    // ========================================
+    // Neon Pulse Effect for Links
+    // ========================================
+    const initNeonPulse = () => {
+        const links = document.querySelectorAll('.paper-link, .award-link, .project-link');
+        links.forEach(link => {
+            link.style.position = 'relative';
+            link.style.overflow = 'visible';
+
+            link.addEventListener('mouseenter', function() {
+                this.style.animation = 'neonPulse 1s ease-in-out infinite';
+            });
+
+            link.addEventListener('mouseleave', function() {
+                this.style.animation = 'none';
+            });
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes neonPulse {
+                0%, 100% {
+                    box-shadow: 0 0 20px rgba(49, 130, 206, 0.5),
+                                0 0 40px rgba(49, 130, 206, 0.3),
+                                0 0 60px rgba(49, 130, 206, 0.1);
+                }
+                50% {
+                    box-shadow: 0 0 30px rgba(49, 130, 206, 0.8),
+                                0 0 60px rgba(49, 130, 206, 0.6),
+                                0 0 90px rgba(49, 130, 206, 0.4);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    };
+
     // Initialize all effects
     try {
         initLoadingScreen();
@@ -572,6 +735,10 @@ document.addEventListener('DOMContentLoaded', function() {
             initSpotlightEffect();
             initMeshGradients();
             enhanceTitles();
+            initStarField();
+            initAuroraEffect();
+            initShootingStars();
+            initNeonPulse();
         }, 1000);
     } catch (error) {
         console.warn('Some visual effects failed to initialize:', error);
