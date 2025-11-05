@@ -1225,3 +1225,294 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+    // ========================================
+    // Matrix Rain Effect
+    // ========================================
+    const initMatrixRain = () => {
+        if (window.innerWidth <= 768) return;
+
+        const footer = document.querySelector('.footer');
+        if (!footer) return;
+
+        const matrixContainer = document.createElement('div');
+        matrixContainer.style.position = 'absolute';
+        matrixContainer.style.top = '0';
+        matrixContainer.style.left = '0';
+        matrixContainer.style.width = '100%';
+        matrixContainer.style.height = '100%';
+        matrixContainer.style.overflow = 'hidden';
+        matrixContainer.style.pointerEvents = 'none';
+        matrixContainer.style.zIndex = '0';
+
+        footer.style.position = 'relative';
+        footer.insertBefore(matrixContainer, footer.firstChild);
+
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ';
+        
+        setInterval(() => {
+            if (Math.random() > 0.9) {
+                const char = document.createElement('div');
+                char.className = 'matrix-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                matrixContainer.appendChild(char);
+
+                setTimeout(() => char.remove(), 5000);
+            }
+        }, 100);
+    };
+
+    // ========================================
+    // Bubble Float Effect
+    // ========================================
+    const initBubbles = () => {
+        if (window.innerWidth <= 768) return;
+
+        const sections = document.querySelectorAll('.publications, .education');
+        sections.forEach(section => {
+            section.style.position = 'relative';
+            section.style.overflow = 'hidden';
+
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'bubble';
+                    const size = Math.random() * 60 + 20;
+                    bubble.style.width = size + 'px';
+                    bubble.style.height = size + 'px';
+                    bubble.style.left = Math.random() * 100 + '%';
+                    bubble.style.bottom = '-100px';
+                    bubble.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                    section.appendChild(bubble);
+
+                    setTimeout(() => bubble.remove(), 8000);
+                }
+            }, 1000);
+        });
+    };
+
+    // ========================================
+    // Advanced Card 3D Effect
+    // ========================================
+    const initAdvanced3DCards = () => {
+        const cards = document.querySelectorAll('.research-item, .publication-item, .award-item');
+        
+        cards.forEach(card => {
+            card.classList.add('card-3d-advanced');
+            
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -15;
+                const rotateY = ((x - centerX) / centerX) * 15;
+                
+                card.style.setProperty('--rotate-x', rotateX + 'deg');
+                card.style.setProperty('--rotate-y', rotateY + 'deg');
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--rotate-x', '0deg');
+                card.style.setProperty('--rotate-y', '0deg');
+            });
+        });
+    };
+
+    // ========================================
+    // Skill Progress Bars (if any)
+    // ========================================
+    const initSkillBars = () => {
+        const createSkillBar = (label, percentage, container) => {
+            const skillWrapper = document.createElement('div');
+            skillWrapper.style.marginBottom = '1.5rem';
+            
+            const labelDiv = document.createElement('div');
+            labelDiv.textContent = label;
+            labelDiv.style.marginBottom = '0.5rem';
+            labelDiv.style.fontWeight = '600';
+            labelDiv.style.color = 'var(--text-dark)';
+            
+            const barContainer = document.createElement('div');
+            barContainer.className = 'skill-bar';
+            
+            const barFill = document.createElement('div');
+            barFill.className = 'skill-bar-fill';
+            barFill.style.setProperty('--skill-width', percentage + '%');
+            
+            barContainer.appendChild(barFill);
+            skillWrapper.appendChild(labelDiv);
+            skillWrapper.appendChild(barContainer);
+            container.appendChild(skillWrapper);
+        };
+
+        // You can add skill bars to education or about section
+        const aboutSection = document.querySelector('.about-content');
+        if (aboutSection && !document.querySelector('.skill-bar')) {
+            const skillsContainer = document.createElement('div');
+            skillsContainer.style.marginTop = '2rem';
+            
+            createSkillBar('AI & Machine Learning', 95, skillsContainer);
+            createSkillBar('LLM Security Research', 90, skillsContainer);
+            createSkillBar('Python & Research Tools', 92, skillsContainer);
+            createSkillBar('Academic Writing', 88, skillsContainer);
+            
+            aboutSection.appendChild(skillsContainer);
+        }
+    };
+
+    // ========================================
+    // Typing Indicator
+    // ========================================
+    const initTypingIndicator = () => {
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        if (!heroSubtitle) return;
+
+        const indicator = document.createElement('span');
+        indicator.className = 'typing-indicator';
+        indicator.innerHTML = `
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+        `;
+        indicator.style.marginLeft = '10px';
+        indicator.style.display = 'none';
+
+        heroSubtitle.appendChild(indicator);
+
+        // Show for first 3 seconds
+        setTimeout(() => {
+            indicator.style.display = 'inline-flex';
+        }, 2000);
+
+        setTimeout(() => {
+            indicator.style.display = 'none';
+        }, 5000);
+    };
+
+    // ========================================
+    // Hexagon Pattern on Sections
+    // ========================================
+    const initHexagonPattern = () => {
+        const sections = document.querySelectorAll('.about, .education, .contact');
+        sections.forEach(section => {
+            section.classList.add('hex-pattern');
+        });
+    };
+
+    // ========================================
+    // Scanline Effect
+    // ========================================
+    const initScanlines = () => {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.classList.add('scanlines');
+        }
+    };
+
+    // ========================================
+    // Pulse Ring on Profile
+    // ========================================
+    const initPulseRing = () => {
+        const profileImage = document.querySelector('.profile-image');
+        if (profileImage) {
+            profileImage.classList.add('pulse-ring');
+        }
+    };
+
+    // ========================================
+    // Neon Flicker on Titles
+    // ========================================
+    const initNeonFlicker = () => {
+        const heroTitle = document.querySelector('.hero h1');
+        if (heroTitle) {
+            heroTitle.classList.add('neon-flicker');
+        }
+    };
+
+    // ========================================
+    // Glowing Border Track on Cards
+    // ========================================
+    const initGlowingBorders = () => {
+        const firstResearch = document.querySelector('.research-item:first-child');
+        const firstPublication = document.querySelector('.publication-item:first-child');
+        const firstAward = document.querySelector('.award-item:first-child');
+        
+        [firstResearch, firstPublication, firstAward].forEach(el => {
+            if (el) {
+                el.classList.add('glowing-border-track');
+            }
+        });
+    };
+
+    // ========================================
+    // Highlight Sweep on Buttons
+    // ========================================
+    const initHighlightSweep = () => {
+        const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+        buttons.forEach(btn => {
+            btn.classList.add('highlight-sweep');
+        });
+    };
+
+    // ========================================
+    // Number Counter Animation
+    // ========================================
+    const initNumberCounters = () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const text = element.textContent;
+                    const matches = text.match(/(\d+)/);
+                    
+                    if (matches && matches[1]) {
+                        const finalValue = parseInt(matches[1]);
+                        let currentValue = 0;
+                        const increment = Math.ceil(finalValue / 50);
+                        const duration = 2000;
+                        const stepTime = duration / (finalValue / increment);
+                        
+                        const counter = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= finalValue) {
+                                currentValue = finalValue;
+                                clearInterval(counter);
+                            }
+                            element.textContent = text.replace(matches[1], currentValue.toString());
+                        }, stepTime);
+                        
+                        observer.unobserve(element);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Target specific elements that have numbers
+        const numberElements = document.querySelectorAll('.research-description, .award-description');
+        numberElements.forEach(el => {
+            if (/\d+/.test(el.textContent)) {
+                observer.observe(el);
+            }
+        });
+    };
+
+    // Initialize all new effects
+    setTimeout(() => {
+        initMatrixRain();
+        initBubbles();
+        initAdvanced3DCards();
+        initSkillBars();
+        initTypingIndicator();
+        initHexagonPattern();
+        initScanlines();
+        initPulseRing();
+        initNeonFlicker();
+        initGlowingBorders();
+        initHighlightSweep();
+        initNumberCounters();
+    }, 1500);
