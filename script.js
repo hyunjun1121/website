@@ -721,11 +721,122 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(style);
     };
 
+    // ========================================
+    // Diamond Particle Effect
+    // ========================================
+    const initDiamondParticles = () => {
+        const hero = document.querySelector('.hero');
+        if (!hero || window.innerWidth <= 768) return;
+
+        const diamondContainer = document.createElement('div');
+        diamondContainer.className = 'diamond-particles';
+        diamondContainer.style.position = 'absolute';
+        diamondContainer.style.top = '0';
+        diamondContainer.style.left = '0';
+        diamondContainer.style.width = '100%';
+        diamondContainer.style.height = '100%';
+        diamondContainer.style.pointerEvents = 'none';
+        diamondContainer.style.zIndex = '1';
+
+        hero.insertBefore(diamondContainer, hero.firstChild);
+
+        setInterval(() => {
+            if (Math.random() > 0.8) {
+                const particle = document.createElement('div');
+                particle.className = 'diamond-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                diamondContainer.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 6000);
+            }
+        }, 500);
+    };
+
+    // ========================================
+    // Enhanced Scroll Reveal
+    // ========================================
+    const initEnhancedScrollReveal = () => {
+        const revealElements = document.querySelectorAll(
+            '.research-item, .publication-item, .award-item, .education-item, .experience-item'
+        );
+
+        revealElements.forEach(el => el.classList.add('reveal-from-bottom'));
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                    }, index * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    };
+
+    // ========================================
+    // Navbar Mouse Tracking
+    // ========================================
+    const initNavbarTracking = () => {
+        const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
+
+        navbar.addEventListener('mousemove', (e) => {
+            const rect = navbar.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            navbar.style.setProperty('--mouse-x', x + '%');
+            navbar.style.setProperty('--mouse-y', y + '%');
+        });
+    };
+
+    // ========================================
+    // Quantum Glow Buttons
+    // ========================================
+    const initQuantumButtons = () => {
+        const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+        buttons.forEach(btn => {
+            btn.classList.add('quantum-glow', 'btn-morph');
+        });
+    };
+
+    // ========================================
+    // Cyber Grid Background
+    // ========================================
+    const initCyberGrid = () => {
+        const sections = document.querySelectorAll('.research, .awards, .experience');
+        sections.forEach((section, index) => {
+            if (index % 2 === 0) {
+                section.classList.add('cyber-grid');
+            }
+        });
+    };
+
+    // ========================================
+    // Laser Beam Effect
+    // ========================================
+    const initLaserBeams = () => {
+        const titles = document.querySelectorAll('section h2');
+        titles.forEach((title, index) => {
+            if (index % 2 === 1) {
+                title.classList.add('laser-beam');
+            }
+        });
+    };
+
     // Initialize all effects
     try {
         initLoadingScreen();
         initCustomCursor();
         initScrollProgress();
+        initNavbarTracking();
         setTimeout(() => {
             init3DCards();
             initFloatingElements();
@@ -739,6 +850,11 @@ document.addEventListener('DOMContentLoaded', function() {
             initAuroraEffect();
             initShootingStars();
             initNeonPulse();
+            initDiamondParticles();
+            initEnhancedScrollReveal();
+            initQuantumButtons();
+            initCyberGrid();
+            initLaserBeams();
         }, 1000);
     } catch (error) {
         console.warn('Some visual effects failed to initialize:', error);
