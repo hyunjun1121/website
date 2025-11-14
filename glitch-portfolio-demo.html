@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Portfolio - Brutalist Design</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=VT323&family=Barlow:wght@300;900&display=swap');
+
+        :root {
+            --glitch-red: #ff0040;
+            --glitch-cyan: #00ffff;
+            --brutal-black: #0a0a0a;
+            --brutal-white: #f0f0f0;
+            --acid-green: #39ff14;
+            --warning-yellow: #ffff00;
+            --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: crosshair;
+        }
+
+        body {
+            font-family: 'Barlow', monospace;
+            background: var(--brutal-black);
+            color: var(--brutal-white);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--noise);
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.8;
+        }
+
+        .scan-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                transparent 50%,
+                rgba(255, 255, 255, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 999;
+            animation: scan 8s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .glitch-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(5rem, 15vw, 12rem);
+            text-transform: uppercase;
+            position: relative;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            animation: glitch-skew 4s infinite;
+        }
+
+        .glitch-title::before,
+        .glitch-title::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch-title::before {
+            animation: glitch-1 0.5s infinite;
+            color: var(--glitch-cyan);
+            z-index: -1;
+            mix-blend-mode: screen;
+        }
+
+        .glitch-title::after {
+            animation: glitch-2 0.5s infinite;
+            color: var(--glitch-red);
+            z-index: -2;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes glitch-1 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(33% 0 30% 0); transform: translate(-2px, 2px); }
+            40% { clip-path: inset(10% 0 65% 0); transform: translate(2px, -2px); }
+            60% { clip-path: inset(80% 0 5% 0); transform: translate(-1px, 1px); }
+            80% { clip-path: inset(50% 0 20% 0); transform: translate(1px, -1px); }
+        }
+
+        @keyframes glitch-2 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(65% 0 20% 0); transform: translate(2px, -1px); }
+            40% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(5% 0 85% 0); transform: translate(1px, -2px); }
+            80% { clip-path: inset(40% 0 40% 0); transform: translate(-1px, 1px); }
+        }
+
+        @keyframes glitch-skew {
+            0%, 100% { transform: skew(0deg); }
+            20% { transform: skew(-2deg); }
+            40% { transform: skew(1deg); }
+            60% { transform: skew(-1deg); }
+            80% { transform: skew(0.5deg); }
+        }
+
+        .brutal-card {
+            background: var(--brutal-white);
+            color: var(--brutal-black);
+            padding: 3rem;
+            margin: 2rem 0;
+            position: relative;
+            transform: rotate(-1deg);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 10px 10px 0 var(--acid-green),
+                        20px 20px 0 var(--glitch-red),
+                        30px 30px 0 var(--glitch-cyan);
+        }
+
+        .brutal-card:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 15px 15px 0 var(--warning-yellow),
+                        30px 30px 0 var(--glitch-cyan),
+                        45px 45px 0 var(--glitch-red);
+        }
+
+        .brutal-card::before {
+            content: 'HOVER ME';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            background: var(--warning-yellow);
+            color: var(--brutal-black);
+            padding: 5px 15px;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            transform: rotate(12deg);
+            font-weight: bold;
+        }
+
+        .project-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: linear-gradient(90deg, var(--brutal-black), var(--glitch-red), var(--brutal-black));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s linear infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--brutal-black);
+            color: var(--acid-green);
+            padding: 8px 16px;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            border: 2px solid var(--acid-green);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .tech-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--acid-green);
+            transition: left 0.3s;
+            z-index: -1;
+        }
+
+        .tech-badge:hover {
+            color: var(--brutal-black);
+            transform: translateY(-3px) rotate(-2deg);
+            box-shadow: 3px 3px 0 var(--glitch-red);
+        }
+
+        .tech-badge:hover::before {
+            left: 0;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .nav-item {
+            background: var(--acid-green);
+            color: var(--brutal-black);
+            padding: 15px;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: right 0.3s;
+        }
+
+        .nav-item:hover {
+            background: var(--glitch-red);
+            color: var(--brutal-white);
+            transform: translateX(-10px);
+            box-shadow: 5px 5px 0 var(--glitch-cyan);
+        }
+
+        .nav-item:hover::after {
+            right: 15px;
+        }
+
+        .distortion-text {
+            font-family: 'VT323', monospace;
+            font-size: 1.5rem;
+            color: var(--acid-green);
+            text-shadow: 2px 2px 0 var(--glitch-red),
+                         -2px -2px 0 var(--glitch-cyan);
+            animation: distort 2s infinite;
+            display: inline-block;
+            margin: 2rem 0;
+        }
+
+        @keyframes distort {
+            0%, 100% { transform: translateX(0) skewX(0deg); }
+            25% { transform: translateX(-5px) skewX(5deg); }
+            50% { transform: translateX(5px) skewX(-5deg); }
+            75% { transform: translateX(-3px) skewX(3deg); }
+        }
+
+        .ascii-decoration {
+            font-family: 'VT323', monospace;
+            color: var(--acid-green);
+            opacity: 0.3;
+            font-size: 1rem;
+            line-height: 1.2;
+            white-space: pre;
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .brutal-card {
+                transform: rotate(0deg);
+                padding: 2rem;
+            }
+
+            .ascii-decoration {
+                display: none;
+            }
+
+            .navigation {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scan-lines"></div>
+
+    <div class="container">
+        <section class="hero-section">
+            <h1 class="glitch-title" data-text="PORTFOLIO">
+                PORTFOLIO
+            </h1>
+            <div class="glitch-title" data-text="2025" style="font-size: clamp(3rem, 10vw, 8rem); color: var(--acid-green);">
+                2025
+            </div>
+
+            <p class="distortion-text">▓▒░ BREAKING THE GRID SINCE 2025 ░▒▓</p>
+
+            <div class="ascii-decoration">
+    ╔════════════╗
+    ║ BRUTALIST  ║
+    ║   DESIGN   ║
+    ║    WITH    ║
+    ║   GLITCH   ║
+    ╚════════════╝
+            </div>
+        </section>
+
+        <div class="brutal-card">
+            <h2 class="project-title">Project Alpha</h2>
+            <p style="font-weight: 300; font-size: 1.1rem; line-height: 1.6;">
+                A revolutionary digital experience that defies conventional web design.
+                Built with chaos and precision in perfect harmony.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Three.js</span>
+                <span class="tech-badge">WebGL</span>
+                <span class="tech-badge">GSAP</span>
+            </div>
+        </div>
+
+        <div class="brutal-card" style="transform: rotate(1deg);">
+            <h2 class="project-title">System Override</h2>
+            <p style="font-weight: 300; font-size: 1.1rem; line-height: 1.6;">
+                Experimental interface pushing the boundaries of user interaction.
+                Where brutalism meets cyberpunk aesthetics.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-badge">Vue 3</span>
+                <span class="tech-badge">Vite</span>
+                <span class="tech-badge">Tailwind</span>
+                <span class="tech-badge">Node.js</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navigation">
+        <a href="#" class="nav-item">Work</a>
+        <a href="#" class="nav-item">About</a>
+        <a href="#" class="nav-item">Contact</a>
+    </nav>
+
+    <script>
+        // Random glitch effect on mouse move
+        let glitchTimeout;
+        document.addEventListener('mousemove', (e) => {
+            clearTimeout(glitchTimeout);
+            const title = document.querySelector('.glitch-title');
+            if (title && Math.random() > 0.95) {
+                title.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+                glitchTimeout = setTimeout(() => {
+                    title.style.transform = 'translate(0, 0)';
+                }, 100);
+            }
+        });
+
+        // Brutal card parallax effect
+        document.querySelectorAll('.brutal-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const deltaX = (x - centerX) / centerX;
+                const deltaY = (y - centerY) / centerY;
+
+                card.style.transform = `
+                    perspective(1000px)
+                    rotateY(${deltaX * 5}deg)
+                    rotateX(${-deltaY * 5}deg)
+                    scale(1.02)
+                `;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = card.style.transform.includes('-1deg') ? 'rotate(-1deg)' : 'rotate(1deg)';
+            });
+        });
+
+        // Tech badge random color shift
+        const colors = ['#ff0040', '#00ffff', '#39ff14', '#ffff00'];
+        document.querySelectorAll('.tech-badge').forEach(badge => {
+            badge.addEventListener('mouseenter', () => {
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                badge.style.borderColor = randomColor;
+                badge.style.setProperty('--acid-green', randomColor);
+            });
+        });
+
+        // Typing effect for distortion text
+        const distortionText = document.querySelector('.distortion-text');
+        if (distortionText) {
+            const originalText = distortionText.textContent;
+            let index = 0;
+
+            setInterval(() => {
+                if (Math.random() > 0.9) {
+                    const chars = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`';
+                    const randomChar = chars[Math.floor(Math.random() * chars.length)];
+                    const randomIndex = Math.floor(Math.random() * originalText.length);
+
+                    const textArray = originalText.split('');
+                    textArray[randomIndex] = randomChar;
+                    distortionText.textContent = textArray.join('');
+
+                    setTimeout(() => {
+                        distortionText.textContent = originalText;
+                    }, 100);
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>

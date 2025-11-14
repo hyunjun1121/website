@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Upgrade Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #fafaf9;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #c9a961 0%, #f7e7ce 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .description {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 3rem;
+            font-size: 1.25rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid #2d2d2d;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #c9a961;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(201, 169, 97, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #c9a961;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #2d2d2d;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            margin-right: 1rem;
+            color: #059669;
+            font-weight: bold;
+        }
+
+        .preview-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #c9a961 0%, #b8935f 100%);
+            color: #0a0a0a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #c9a961;
+            border-color: #c9a961;
+        }
+
+        .btn-secondary:hover {
+            background: #c9a961;
+            color: #0a0a0a;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #2d2d2d;
+            color: #c9a961;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio Design Upgrade</h1>
+        <p class="description">Frontend-design plugin을 활용한 고급스러운 Editorial/Magazine aesthetic 디자인</p>
+
+        <div class="comparison-grid">
+            <div class="card">
+                <h2>🎨 Design Philosophy</h2>
+                <ul class="feature-list">
+                    <li>Editorial/Magazine meets Neo-Luxury aesthetic</li>
+                    <li>Sophisticated typography hierarchy</li>
+                    <li>Refined color palette with gold accents</li>
+                    <li>Print-inspired layout and composition</li>
+                    <li>Premium feel with attention to detail</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>⚡ Interactive Features</h2>
+                <ul class="feature-list">
+                    <li>Custom animated cursor with magnetic effect</li>
+                    <li>Advanced particle system with connections</li>
+                    <li>Smooth scroll-triggered animations</li>
+                    <li>Dynamic typewriter effect</li>
+                    <li>Parallax scrolling elements</li>
+                    <li>Hover ripple effects on cards</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🎯 Typography System</h2>
+                <ul class="feature-list">
+                    <li>Playfair Display - Elegant serif headers</li>
+                    <li>Crimson Text - Refined body text</li>
+                    <li>JetBrains Mono - Technical elements</li>
+                    <li>Drop cap for article sections</li>
+                    <li>Responsive type scale</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>✨ Visual Enhancements</h2>
+                <ul class="feature-list">
+                    <li>Grain texture overlay for depth</li>
+                    <li>Gold accent system throughout</li>
+                    <li>Editorial grid layout</li>
+                    <li>Sophisticated shadow hierarchy</li>
+                    <li>Premium hover interactions</li>
+                    <li>Grayscale to color image transitions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚀 Technical Implementation</h2>
+            <p style="margin-bottom: 1rem;">고급 frontend 기술을 활용한 production-ready 구현:</p>
+            <div>
+                <span class="tech-badge">CSS Grid</span>
+                <span class="tech-badge">CSS Custom Properties</span>
+                <span class="tech-badge">Intersection Observer</span>
+                <span class="tech-badge">RequestAnimationFrame</span>
+                <span class="tech-badge">Canvas API</span>
+                <span class="tech-badge">CSS Animations</span>
+                <span class="tech-badge">Mix Blend Modes</span>
+                <span class="tech-badge">Backdrop Filters</span>
+            </div>
+        </div>
+
+        <div class="preview-buttons">
+            <a href="index.html" class="btn btn-primary">View Upgraded Portfolio</a>
+            <a href="glitch-portfolio-demo.html" class="btn btn-secondary">View Glitch Demo</a>
+        </div>
+    </div>
+</body>
+</html>
