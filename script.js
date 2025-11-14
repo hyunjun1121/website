@@ -558,11 +558,285 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    // ========================================
+    // Star Field Background Effect
+    // ========================================
+    const initStarField = () => {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+
+        const starField = document.createElement('div');
+        starField.className = 'star-field';
+        starField.style.position = 'absolute';
+        starField.style.top = '0';
+        starField.style.left = '0';
+        starField.style.width = '100%';
+        starField.style.height = '100%';
+        starField.style.overflow = 'hidden';
+        starField.style.zIndex = '0';
+        starField.style.pointerEvents = 'none';
+
+        // Create stars
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.position = 'absolute';
+            star.style.width = Math.random() * 3 + 1 + 'px';
+            star.style.height = star.style.width;
+            star.style.borderRadius = '50%';
+            star.style.background = `rgba(255, 255, 255, ${Math.random() * 0.8 + 0.2})`;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = `twinkle ${Math.random() * 3 + 2}s ease-in-out infinite`;
+            star.style.boxShadow = `0 0 ${Math.random() * 10 + 5}px rgba(255, 255, 255, 0.8)`;
+            starField.appendChild(star);
+        }
+
+        hero.insertBefore(starField, hero.firstChild);
+
+        // Add twinkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes twinkle {
+                0%, 100% { opacity: 1; transform: scale(1); }
+                50% { opacity: 0.3; transform: scale(0.8); }
+            }
+        `;
+        document.head.appendChild(style);
+    };
+
+    // ========================================
+    // Aurora Borealis Effect
+    // ========================================
+    const initAuroraEffect = () => {
+        const sections = document.querySelectorAll('.research, .publications');
+        sections.forEach(section => {
+            const aurora = document.createElement('div');
+            aurora.style.position = 'absolute';
+            aurora.style.top = '0';
+            aurora.style.left = '0';
+            aurora.style.width = '100%';
+            aurora.style.height = '100%';
+            aurora.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 50%, rgba(255, 0, 128, 0.1) 100%)';
+            aurora.style.backgroundSize = '200% 200%';
+            aurora.style.animation = 'auroraFlow 15s ease-in-out infinite';
+            aurora.style.pointerEvents = 'none';
+            aurora.style.zIndex = '0';
+
+            section.style.position = 'relative';
+            section.insertBefore(aurora, section.firstChild);
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes auroraFlow {
+                0%, 100% {
+                    background-position: 0% 50%;
+                    opacity: 0.3;
+                }
+                50% {
+                    background-position: 100% 50%;
+                    opacity: 0.6;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    };
+
+    // ========================================
+    // Shooting Stars Effect
+    // ========================================
+    const initShootingStars = () => {
+        if (window.innerWidth <= 768) return;
+
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                const star = document.createElement('div');
+                star.style.position = 'fixed';
+                star.style.width = '100px';
+                star.style.height = '2px';
+                star.style.background = 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent)';
+                star.style.left = Math.random() * window.innerWidth + 'px';
+                star.style.top = Math.random() * window.innerHeight / 2 + 'px';
+                star.style.transform = 'rotate(-45deg)';
+                star.style.pointerEvents = 'none';
+                star.style.zIndex = '9999';
+                star.style.animation = 'shootingStar 1.5s ease-out forwards';
+                star.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.8)';
+                document.body.appendChild(star);
+
+                setTimeout(() => star.remove(), 1500);
+            }
+        }, 3000);
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shootingStar {
+                0% {
+                    transform: rotate(-45deg) translateX(0) translateY(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: rotate(-45deg) translateX(300px) translateY(300px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    };
+
+    // ========================================
+    // Neon Pulse Effect for Links
+    // ========================================
+    const initNeonPulse = () => {
+        const links = document.querySelectorAll('.paper-link, .award-link, .project-link');
+        links.forEach(link => {
+            link.style.position = 'relative';
+            link.style.overflow = 'visible';
+
+            link.addEventListener('mouseenter', function() {
+                this.style.animation = 'neonPulse 1s ease-in-out infinite';
+            });
+
+            link.addEventListener('mouseleave', function() {
+                this.style.animation = 'none';
+            });
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes neonPulse {
+                0%, 100% {
+                    box-shadow: 0 0 20px rgba(49, 130, 206, 0.5),
+                                0 0 40px rgba(49, 130, 206, 0.3),
+                                0 0 60px rgba(49, 130, 206, 0.1);
+                }
+                50% {
+                    box-shadow: 0 0 30px rgba(49, 130, 206, 0.8),
+                                0 0 60px rgba(49, 130, 206, 0.6),
+                                0 0 90px rgba(49, 130, 206, 0.4);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    };
+
+    // ========================================
+    // Diamond Particle Effect
+    // ========================================
+    const initDiamondParticles = () => {
+        const hero = document.querySelector('.hero');
+        if (!hero || window.innerWidth <= 768) return;
+
+        const diamondContainer = document.createElement('div');
+        diamondContainer.className = 'diamond-particles';
+        diamondContainer.style.position = 'absolute';
+        diamondContainer.style.top = '0';
+        diamondContainer.style.left = '0';
+        diamondContainer.style.width = '100%';
+        diamondContainer.style.height = '100%';
+        diamondContainer.style.pointerEvents = 'none';
+        diamondContainer.style.zIndex = '1';
+
+        hero.insertBefore(diamondContainer, hero.firstChild);
+
+        setInterval(() => {
+            if (Math.random() > 0.8) {
+                const particle = document.createElement('div');
+                particle.className = 'diamond-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                diamondContainer.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 6000);
+            }
+        }, 500);
+    };
+
+    // ========================================
+    // Enhanced Scroll Reveal
+    // ========================================
+    const initEnhancedScrollReveal = () => {
+        const revealElements = document.querySelectorAll(
+            '.research-item, .publication-item, .award-item, .education-item, .experience-item'
+        );
+
+        revealElements.forEach(el => el.classList.add('reveal-from-bottom'));
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                    }, index * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    };
+
+    // ========================================
+    // Navbar Mouse Tracking
+    // ========================================
+    const initNavbarTracking = () => {
+        const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
+
+        navbar.addEventListener('mousemove', (e) => {
+            const rect = navbar.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            navbar.style.setProperty('--mouse-x', x + '%');
+            navbar.style.setProperty('--mouse-y', y + '%');
+        });
+    };
+
+    // ========================================
+    // Quantum Glow Buttons
+    // ========================================
+    const initQuantumButtons = () => {
+        const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+        buttons.forEach(btn => {
+            btn.classList.add('quantum-glow', 'btn-morph');
+        });
+    };
+
+    // ========================================
+    // Cyber Grid Background
+    // ========================================
+    const initCyberGrid = () => {
+        const sections = document.querySelectorAll('.research, .awards, .experience');
+        sections.forEach((section, index) => {
+            if (index % 2 === 0) {
+                section.classList.add('cyber-grid');
+            }
+        });
+    };
+
+    // ========================================
+    // Laser Beam Effect
+    // ========================================
+    const initLaserBeams = () => {
+        const titles = document.querySelectorAll('section h2');
+        titles.forEach((title, index) => {
+            if (index % 2 === 1) {
+                title.classList.add('laser-beam');
+            }
+        });
+    };
+
     // Initialize all effects
     try {
         initLoadingScreen();
         initCustomCursor();
         initScrollProgress();
+        initNavbarTracking();
         setTimeout(() => {
             init3DCards();
             initFloatingElements();
@@ -572,6 +846,15 @@ document.addEventListener('DOMContentLoaded', function() {
             initSpotlightEffect();
             initMeshGradients();
             enhanceTitles();
+            initStarField();
+            initAuroraEffect();
+            initShootingStars();
+            initNeonPulse();
+            initDiamondParticles();
+            initEnhancedScrollReveal();
+            initQuantumButtons();
+            initCyberGrid();
+            initLaserBeams();
         }, 1000);
     } catch (error) {
         console.warn('Some visual effects failed to initialize:', error);
@@ -942,3 +1225,294 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+    // ========================================
+    // Matrix Rain Effect
+    // ========================================
+    const initMatrixRain = () => {
+        if (window.innerWidth <= 768) return;
+
+        const footer = document.querySelector('.footer');
+        if (!footer) return;
+
+        const matrixContainer = document.createElement('div');
+        matrixContainer.style.position = 'absolute';
+        matrixContainer.style.top = '0';
+        matrixContainer.style.left = '0';
+        matrixContainer.style.width = '100%';
+        matrixContainer.style.height = '100%';
+        matrixContainer.style.overflow = 'hidden';
+        matrixContainer.style.pointerEvents = 'none';
+        matrixContainer.style.zIndex = '0';
+
+        footer.style.position = 'relative';
+        footer.insertBefore(matrixContainer, footer.firstChild);
+
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ';
+        
+        setInterval(() => {
+            if (Math.random() > 0.9) {
+                const char = document.createElement('div');
+                char.className = 'matrix-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                matrixContainer.appendChild(char);
+
+                setTimeout(() => char.remove(), 5000);
+            }
+        }, 100);
+    };
+
+    // ========================================
+    // Bubble Float Effect
+    // ========================================
+    const initBubbles = () => {
+        if (window.innerWidth <= 768) return;
+
+        const sections = document.querySelectorAll('.publications, .education');
+        sections.forEach(section => {
+            section.style.position = 'relative';
+            section.style.overflow = 'hidden';
+
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'bubble';
+                    const size = Math.random() * 60 + 20;
+                    bubble.style.width = size + 'px';
+                    bubble.style.height = size + 'px';
+                    bubble.style.left = Math.random() * 100 + '%';
+                    bubble.style.bottom = '-100px';
+                    bubble.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                    section.appendChild(bubble);
+
+                    setTimeout(() => bubble.remove(), 8000);
+                }
+            }, 1000);
+        });
+    };
+
+    // ========================================
+    // Advanced Card 3D Effect
+    // ========================================
+    const initAdvanced3DCards = () => {
+        const cards = document.querySelectorAll('.research-item, .publication-item, .award-item');
+        
+        cards.forEach(card => {
+            card.classList.add('card-3d-advanced');
+            
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -15;
+                const rotateY = ((x - centerX) / centerX) * 15;
+                
+                card.style.setProperty('--rotate-x', rotateX + 'deg');
+                card.style.setProperty('--rotate-y', rotateY + 'deg');
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--rotate-x', '0deg');
+                card.style.setProperty('--rotate-y', '0deg');
+            });
+        });
+    };
+
+    // ========================================
+    // Skill Progress Bars (if any)
+    // ========================================
+    const initSkillBars = () => {
+        const createSkillBar = (label, percentage, container) => {
+            const skillWrapper = document.createElement('div');
+            skillWrapper.style.marginBottom = '1.5rem';
+            
+            const labelDiv = document.createElement('div');
+            labelDiv.textContent = label;
+            labelDiv.style.marginBottom = '0.5rem';
+            labelDiv.style.fontWeight = '600';
+            labelDiv.style.color = 'var(--text-dark)';
+            
+            const barContainer = document.createElement('div');
+            barContainer.className = 'skill-bar';
+            
+            const barFill = document.createElement('div');
+            barFill.className = 'skill-bar-fill';
+            barFill.style.setProperty('--skill-width', percentage + '%');
+            
+            barContainer.appendChild(barFill);
+            skillWrapper.appendChild(labelDiv);
+            skillWrapper.appendChild(barContainer);
+            container.appendChild(skillWrapper);
+        };
+
+        // You can add skill bars to education or about section
+        const aboutSection = document.querySelector('.about-content');
+        if (aboutSection && !document.querySelector('.skill-bar')) {
+            const skillsContainer = document.createElement('div');
+            skillsContainer.style.marginTop = '2rem';
+            
+            createSkillBar('AI & Machine Learning', 95, skillsContainer);
+            createSkillBar('LLM Security Research', 90, skillsContainer);
+            createSkillBar('Python & Research Tools', 92, skillsContainer);
+            createSkillBar('Academic Writing', 88, skillsContainer);
+            
+            aboutSection.appendChild(skillsContainer);
+        }
+    };
+
+    // ========================================
+    // Typing Indicator
+    // ========================================
+    const initTypingIndicator = () => {
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        if (!heroSubtitle) return;
+
+        const indicator = document.createElement('span');
+        indicator.className = 'typing-indicator';
+        indicator.innerHTML = `
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+        `;
+        indicator.style.marginLeft = '10px';
+        indicator.style.display = 'none';
+
+        heroSubtitle.appendChild(indicator);
+
+        // Show for first 3 seconds
+        setTimeout(() => {
+            indicator.style.display = 'inline-flex';
+        }, 2000);
+
+        setTimeout(() => {
+            indicator.style.display = 'none';
+        }, 5000);
+    };
+
+    // ========================================
+    // Hexagon Pattern on Sections
+    // ========================================
+    const initHexagonPattern = () => {
+        const sections = document.querySelectorAll('.about, .education, .contact');
+        sections.forEach(section => {
+            section.classList.add('hex-pattern');
+        });
+    };
+
+    // ========================================
+    // Scanline Effect
+    // ========================================
+    const initScanlines = () => {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.classList.add('scanlines');
+        }
+    };
+
+    // ========================================
+    // Pulse Ring on Profile
+    // ========================================
+    const initPulseRing = () => {
+        const profileImage = document.querySelector('.profile-image');
+        if (profileImage) {
+            profileImage.classList.add('pulse-ring');
+        }
+    };
+
+    // ========================================
+    // Neon Flicker on Titles
+    // ========================================
+    const initNeonFlicker = () => {
+        const heroTitle = document.querySelector('.hero h1');
+        if (heroTitle) {
+            heroTitle.classList.add('neon-flicker');
+        }
+    };
+
+    // ========================================
+    // Glowing Border Track on Cards
+    // ========================================
+    const initGlowingBorders = () => {
+        const firstResearch = document.querySelector('.research-item:first-child');
+        const firstPublication = document.querySelector('.publication-item:first-child');
+        const firstAward = document.querySelector('.award-item:first-child');
+        
+        [firstResearch, firstPublication, firstAward].forEach(el => {
+            if (el) {
+                el.classList.add('glowing-border-track');
+            }
+        });
+    };
+
+    // ========================================
+    // Highlight Sweep on Buttons
+    // ========================================
+    const initHighlightSweep = () => {
+        const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+        buttons.forEach(btn => {
+            btn.classList.add('highlight-sweep');
+        });
+    };
+
+    // ========================================
+    // Number Counter Animation
+    // ========================================
+    const initNumberCounters = () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const text = element.textContent;
+                    const matches = text.match(/(\d+)/);
+                    
+                    if (matches && matches[1]) {
+                        const finalValue = parseInt(matches[1]);
+                        let currentValue = 0;
+                        const increment = Math.ceil(finalValue / 50);
+                        const duration = 2000;
+                        const stepTime = duration / (finalValue / increment);
+                        
+                        const counter = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= finalValue) {
+                                currentValue = finalValue;
+                                clearInterval(counter);
+                            }
+                            element.textContent = text.replace(matches[1], currentValue.toString());
+                        }, stepTime);
+                        
+                        observer.unobserve(element);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Target specific elements that have numbers
+        const numberElements = document.querySelectorAll('.research-description, .award-description');
+        numberElements.forEach(el => {
+            if (/\d+/.test(el.textContent)) {
+                observer.observe(el);
+            }
+        });
+    };
+
+    // Initialize all new effects
+    setTimeout(() => {
+        initMatrixRain();
+        initBubbles();
+        initAdvanced3DCards();
+        initSkillBars();
+        initTypingIndicator();
+        initHexagonPattern();
+        initScanlines();
+        initPulseRing();
+        initNeonFlicker();
+        initGlowingBorders();
+        initHighlightSweep();
+        initNumberCounters();
+    }, 1500);
