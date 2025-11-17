@@ -214,7 +214,41 @@
             
             <div class="publication-category">
                 <h3>Published</h3>
+                <p class="publication-note" style="font-size: 0.875rem; color: var(--stone); margin-bottom: 1.5rem;">(*: equal contribution, †: Corresponding author)</p>
                 <div class="publication-list">
+                    <div class="publication-item">
+                        <h4>MacroBench: A Novel Testbed for Web Automation Scripts via Large Language Models</h4>
+                        <p class="authors"><strong>Hyunjun Kim*</strong>, Sejong Kim*</p>
+                        <p class="venue">NeurIPS 2025 Workshop on Lock-LLM</p>
+                        <ul class="research-achievements">
+                            <li>Introduced MacroBench, a code-first benchmark evaluating LLM macro synthesis across 681 tasks</li>
+                            <li>Revealed stratified model performance: GPT-4o-Mini (96.8%), GPT-4.1 (95.3%), Gemini (89.0%), DeepSeek (83.4%)</li>
+                        </ul>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>X-Teaming Evolutionary M2S: Automated Discovery of Multi-turn to Single-turn Jailbreak Templates</h4>
+                        <p class="authors"><strong>Hyunjun Kim*</strong>, Junwoo Ha*, Jiyoung Park, Sangyoon Yu, Haon Park</p>
+                        <p class="venue">NeurIPS 2025 Workshop on Lock-LLM</p>
+                        <ul class="research-achievements">
+                            <li>First automated framework that evolves M2S templates with an LLM-guided loop</li>
+                            <li>Discovers 2 new template families and reaches 44.8% success at a strict θ = 0.70 on GPT-4.1</li>
+                            <li>2,500-trial cross-model panel reveals structural transferability; full artifacts publicly released</li>
+                        </ul>
+                        <a href="https://arxiv.org/abs/2509.08729" target="_blank" class="paper-link">Paper</a>
+                        <a href="https://github.com/hyunjun1121/M2S-x-teaming" target="_blank" class="paper-link" style="margin-left: 0.5rem;">Code</a>
+                    </div>
+
+                    <div class="publication-item">
+                        <h4>ObjexMT: Objective Extraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn Jailbreaks</h4>
+                        <p class="authors"><strong>Hyunjun Kim*</strong>, Junwoo Ha*, Jiyoung Park, Sangyoon Yu, Haon Park</p>
+                        <p class="venue">NeurIPS 2025 Workshop on MYI-LLM</p>
+                        <ul class="research-achievements">
+                            <li>Proposed OBJEX(MT), a benchmark for objective extraction + metacognitive calibration of LLM-as-a-Judge</li>
+                            <li>Claude-Sonnet-4 achieves best accuracy (0.515) and calibration (ECE 0.296 / Brier 0.324)</li>
+                        </ul>
+                    </div>
+
                     <div class="publication-item">
                         <h4>One Shot is Enough: Consolidating Multi-Turn Attacks into Efficient Single-Turn Prompts for LLMs</h4>
                         <p class="authors">Junwoo Ha*, <strong>Hyunjun Kim*</strong>, Sangyoon Yu, Haon Park, Ashkan Yousefpour, Yuna Park, Suhyun Kim†</p>
@@ -250,13 +284,6 @@
             <div class="publication-category">
                 <h3>Under Review</h3>
                 <div class="publication-list">
-                    <div class="publication-item">
-                        <h4>OBJEX(MT): Objective EXtraction and Metacognitive Calibration for LLM-as-a-Judge under Multi-Turn Jailbreaks</h4>
-                        <p class="authors"><strong>Hyunjun Kim</strong>, Junwoo Ha, Jiyoung Park, Sangyoon Yu, Haon Park</p>
-                        <p class="venue">Preprint (Under review) NeurIPS 2025 Workshop on Multi-Turn Interactions in Large Language Models</p>
-                        <p class="description"><strong>First author.</strong> Proposed OBJEX(MT), a benchmark for objective extraction + metacognitive calibration of LLM-as-a-Judge under multi-turn jailbreaks.</p>
-                    </div>
-
                     <div class="publication-item">
                         <h4>Personality Plus: How System-Level Behavioral Customization Boosts Jailbreak Vulnerabilities</h4>
                         <p class="authors">Yuna Park*, Yujin Kim*, Won Woo Ro, <strong>Hyunjun Kim</strong>, Junwoo Ha, Jiyoung Park, Garam Kim, Suhyun Kim</p>
